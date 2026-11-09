@@ -1,5 +1,0 @@
-Optional: put .mp4 files in this folder, upload the site, and use the link
-https://YOUR-SITE.netlify.app/movies/FILE-NAME.mp4  as a movie's "Video link".
-
-Keep files small — big movies make the whole site upload slow and use up
-your hosting bandwidth fast. Google Drive links are better for full movies.
