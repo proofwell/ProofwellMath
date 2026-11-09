@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>blocked</title>
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/panic.js"></script>
+  <!-- The page stays hidden ("loading") until chat.js confirms you're signed in,
+       have the code, are approved and not banned. Otherwise it sends you to signin.html. -->
+</head>
+<body class="loading">
+<div class="app">
+  <!-- Left: channels + DMs -->
+  <aside class="side left" id="left">
+    <div class="app-name"><span>Sussy</span><a class="practice-link" href="math.html" title="Back to math practice">∑ Practice</a></div>
+    <div class="side-scroll">
+      <button class="item" id="go-explore"><span class="hash">🧭</span><span class="grow name">Explore</span></button>
+      <button class="item" id="go-announce"><span class="hash">📢</span><span class="grow name">Announcements</span></button>
+      <button class="item" id="go-suggest"><span class="hash">💡</span><span class="grow name">Suggestions</span><span class="count" id="suggest-count" hidden></span></button>
+      <div class="side-title">Channels <button id="new-channel" title="New channel (mods)" hidden>+</button></div>
+      <div id="channel-list"></div>
+      <button class="item friends-item" id="friends-btn"><span class="hash">👥</span><span class="grow name">Friends</span><span class="count" id="friends-count" hidden></span></button>
+      <div class="side-title">Direct messages <button id="new-dm" title="New message">+</button></div>
+      <div id="dm-list"></div>
+    </div>
+    <div id="mini-player"></div>
+    <button class="games-side music-side" id="music"><span class="games-side-icon">🎵</span> Music</button>
+    <button class="games-side movies-side" id="movies"><span class="games-side-icon">🎬</span> Movies</button>
+    <button class="games-side" id="games"><span class="games-side-icon">🎮</span> Games</button>
+    <div class="me-bar">
+      <div id="me-avatar"></div>
+      <div class="grow">
+        <div class="name" id="me-name" style="font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
+        <div class="muted" id="me-email" style="font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
+      </div>
+      <a class="icon-btn" id="mod-link" href="modpanel.html" title="Mod panel" hidden>🛡️<span class="count" id="pending-count" hidden></span></a>
+      <button class="icon-btn" id="theme-btn" title="Light mode" hidden>☀️</button>
+      <button class="icon-btn" id="bell" title="Notifications">🔔</button>
+      <button class="icon-btn" id="settings" title="Profile settings">⚙️</button>
+      <button class="icon-btn" id="signout" title="Sign out">⏻</button>
+    </div>
+  </aside>
+
+  <!-- Middle: messages -->
+  <main class="main">
+    <div class="topbar">
+      <button class="icon-btn mobile-only" id="open-left" title="Menu">☰</button>
+      <div class="title" id="title"></div>
+      <div style="flex:1"></div>
+      <button class="icon-btn mobile-only" id="open-right" title="Members">👥</button>
+    </div>
+    <div class="messages" id="messages"></div>
+    <div class="composer" id="composer">
+      <div class="timeout-bar" id="timeout-bar" hidden></div>
+      <div class="readonly-bar" id="readonly-bar" hidden>📢 Only mods can post announcements. You'll see them here.</div>
+      <div class="composer-wrap" id="composer-wrap">
+        <div class="reply-bar" id="reply-bar" hidden></div>
+        <div class="composer-box" id="composer-box">
+          <button class="icon-btn gif-btn" id="gif-btn" title="GIFs">GIF</button>
+          <button class="icon-btn sticker-btn" id="sticker-btn" title="Stickers">💖</button>
+          <button class="icon-btn img-btn" id="img-btn" title="Send a photo" hidden>📷</button>
+          <button class="icon-btn img-btn" id="media-btn" title="Send audio or video (video ≤ 8 MB, audio ≤ 5 MB)" hidden>🎞️</button>
+          <textarea id="input" rows="1" maxlength="1000" placeholder="Message"></textarea>
+          <button class="btn primary sm" id="send">Send</button>
+        </div>
+      </div>
+      <div class="hint">Enter to send · Shift+Enter new line · @ to mention · hover a message to reply</div>
+    </div>
+  </main>
+
+  <!-- Right: members -->
+  <aside class="side right" id="right">
+    <div class="side-scroll members" id="members"></div>
+  </aside>
+</div>
+<script type="module" src="js/chat.js"></script>
+</body>
+</html>
