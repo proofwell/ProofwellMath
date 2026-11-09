@@ -1,0 +1,11 @@
+EASIEST WAY: on the site, open 🎵 Music → "+ Add song" → choose the audio file
+(MP3, up to 12 MB) and paste a link to the album picture. Done — no re-uploading the site.
+
+TO SAVE DATABASE SPACE (lots of songs):
+1. Put your MP3 files in THIS folder (public/music), e.g. public/music/my-song.mp3
+2. Re-upload public.zip to Netlify.
+3. On the site: Music → + Add song → "Audio link" tab → paste
+   https://YOUR-SITE.netlify.app/music/my-song.mp3
+   Songs in this folder take no database space at all.
+
+Album picture: right-click a picture online → "Copy image address", and paste it.
